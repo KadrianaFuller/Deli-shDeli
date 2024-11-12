@@ -12,9 +12,9 @@ import java.util.Scanner;
 public class ScreenManager {
 
     private List<Order> currentOrder = new ArrayList<>();
-    private Scanner in = new Scanner(System.in);
+    private final Scanner in = new Scanner(System.in);
 
-    public void showSplashScreen() {
+    public void showLogoScreen() {
         // Display the logo
         showLogo();
 
@@ -30,19 +30,18 @@ public class ScreenManager {
         showHomeScreen();
     }
 
-    private void showLogo() {
+    public void showLogo() {
         System.out.println("╔══════════════════════════════════════════════════════╗");
+        System.out.println("║              ██████╗ ███████╗██╗     ██╗             ║");
+        System.out.println("║              ██╔══██╗██╔════╝██║     ██║             ║");
+        System.out.println("║              ██║  ██║█████╗  ██║     ██║             ║");
+        System.out.println("║              ██║  ██║██╔══╝  ██║     ██║             ║");
+        System.out.println("║              ██████╔╝███████╗███████╗██║             ║");
+        System.out.println("║              ╚═════╝ ╚══════╝╚══════╝╚═╝             ║");
         System.out.println("║                                                      ║");
-        System.out.println("║   ██████╗ ███████╗██╗     ██╗ ██████╗ ███████╗       ║");
-        System.out.println("║   ██╔══██╗██╔════╝██║     ██║██╔════╝ ██╔════╝       ║");
-        System.out.println("║   ██║  ██║█████╗  ██║     ██║██║  ███╗███████╗       ║");
-        System.out.println("║   ██║  ██║██╔══╝  ██║     ██║██║   ██║╚════██║       ║");
-        System.out.println("║   ██████╔╝███████╗███████╗██║╚██████╔╝███████║       ║");
-        System.out.println("║   ╚═════╝ ╚══════╝╚══════╝╚═╝ ╚═════╝ ╚══════╝       ║");
+        System.out.println("║                  Welcome to DELI-sh!                 ║");
         System.out.println("║                                                      ║");
-        System.out.println("║         Welcome to DELI-cious Sandwich Shop          ║");
         System.out.println("╚══════════════════════════════════════════════════════╝");
-
     }
 
 
@@ -115,7 +114,7 @@ public class ScreenManager {
 
     private void addSandwich() {
         System.out.println("╔══════════════════════════════════════════════════════╗");
-        System.out.println("║                 Select Sandwich Size                 ║");
+        System.out.println("║                 Select Sandwich Size:                ║");
         System.out.println("╠══════════════════════════════════════════════════════╣");
         System.out.println("║  (1) 4-inch ($5.50)                                  ║");
         System.out.println("║  (2) 8-inch ($7.00)                                  ║");
@@ -144,7 +143,7 @@ public class ScreenManager {
                 return;
         }
         System.out.println("╔══════════════════════════════════════════════════════╗");
-        System.out.println("║                  Select Bread Type                   ║");
+        System.out.println("║                  Select Bread Type:                  ║");
         System.out.println("╠══════════════════════════════════════════════════════╣");
         System.out.println("║  (1) White                                           ║");
         System.out.println("║  (2) Wheat                                           ║");
@@ -181,7 +180,7 @@ public class ScreenManager {
         double extraMeatCost = 0;
         while (true) {
             System.out.println("╔══════════════════════════════════════════════════════╗");
-            System.out.println("║                  Select Meat Toppings                ║");
+            System.out.println("║                  Select Meat Toppings:               ║");
             System.out.println("╠══════════════════════════════════════════════════════╣");
             System.out.println("║  (1) Steak                                           ║");
             System.out.println("║  (2) Ham                                             ║");
@@ -245,7 +244,7 @@ public class ScreenManager {
         double extraCheeseCost = 0;
         while (true) {
             System.out.println("╔══════════════════════════════════════════════════════╗");
-            System.out.println("║                 Select Cheese Toppings               ║");
+            System.out.println("║                 Select Cheese Toppings:              ║");
             System.out.println("╠══════════════════════════════════════════════════════╣");
             System.out.println("║  (1) American                                        ║");
             System.out.println("║  (2) Pepper Jack                                     ║");
@@ -304,7 +303,7 @@ public class ScreenManager {
         List<String> regularToppings = new ArrayList<>();
         while (true) {
             System.out.println("╔══════════════════════════════════════════════════════╗");
-            System.out.println("║                Select Regular Toppings               ║");
+            System.out.println("║               Select Regular Toppings:               ║");
             System.out.println("╠══════════════════════════════════════════════════════╣");
             System.out.println("║  (1) Lettuce                                         ║");
             System.out.println("║  (2) Peppers                                         ║");
@@ -359,9 +358,9 @@ public class ScreenManager {
             regularToppings.add(topping);
         }
         List<String> sauces = new ArrayList<>();
-        while (true){
+        while (true) {
             System.out.println("╔══════════════════════════════════════════════════════╗");
-            System.out.println("║                     Select Sauces                    ║");
+            System.out.println("║                     Select Sauces:                   ║");
             System.out.println("╠══════════════════════════════════════════════════════╣");
             System.out.println("║  (1) Mayo                                            ║");
             System.out.println("║  (2) Mustard                                         ║");
@@ -418,7 +417,7 @@ public class ScreenManager {
 
     private void addDrink() {
         System.out.println("╔══════════════════════════════════════════════════════╗");
-        System.out.println("║                 Select Drink                         ║");
+        System.out.println("║                 Select Drink:                        ║");
         System.out.println("╠══════════════════════════════════════════════════════╣");
         System.out.println("║  (1) Water                                           ║");
         System.out.println("║  (2) Lemonade                                        ║");
@@ -455,7 +454,7 @@ public class ScreenManager {
                 return;
         }
         System.out.println("╔══════════════════════════════════════════════════════╗");
-        System.out.println("║                   Select Drink Size                  ║");
+        System.out.println("║                   Select Drink Size:                 ║");
         System.out.println("╠══════════════════════════════════════════════════════╣");
         System.out.println("║  (1) Small ($2.00)                                   ║");
         System.out.println("║  (2) Medium ($2.50)                                  ║");
@@ -496,7 +495,7 @@ public class ScreenManager {
 
     private void addChips() {
         System.out.println("╔══════════════════════════════════════════════════════╗");
-        System.out.println("║              You have selected to add chips          ║");
+        System.out.println("║                    Select Chips:                     ║");
         System.out.println("╠══════════════════════════════════════════════════════╣");
         System.out.println("║  (1) Kettle Jalapeno Lays                            ║");
         System.out.println("║  (2) Plain Lays                                      ║");
@@ -533,7 +532,7 @@ public class ScreenManager {
 
         System.out.println("╔══════════════════════════════════════════════════════╗");
         System.out.println("║              Chips Added to Order!                   ║");
-        System.out.println("║              " + type + "                            ║");
+        System.out.println("║                   " + type + "                            ║");
         System.out.println("╚══════════════════════════════════════════════════════╝");
 
     }
@@ -543,8 +542,50 @@ public class ScreenManager {
         System.out.println("║                      Checkout                        ║");
         System.out.println("╠══════════════════════════════════════════════════════╣");
 
+        // Step 1: Check if the order is empty
+        if (currentOrder.isEmpty()) {
+            System.out.println("║ No items in the order.                               ║");
+            System.out.println("╚══════════════════════════════════════════════════════╝");
+            return;
+        }
+
+        // Step 2: Display the order summary
+        System.out.println("║                     Order Summary                    ║");
+        double total = 0.0;
+        for (Order order : currentOrder) {
+            System.out.printf("║  %-50s $%-6.2f %n ║", order.toString(), order.getTotal());
+            total += order.getTotal();
+        }
+
+        // Step 3: Display the total price
+        System.out.println("╠══════════════════════════════════════════════════════╣");
+         System.out.printf("║  Total Price: $%-43.2f%n                             ║", total);
+        System.out.println("╚══════════════════════════════════════════════════════╝");
+
+        // Step 4: Confirm or cancel the order
+        System.out.print("Confirm order? (yes to confirm, no to cancel): ");
+        String confirm = in.nextLine();
+
+        if (confirm.equalsIgnoreCase("yes")) {
+            // Generate and save the receipt
+            ReceiptManager receiptManager = new ReceiptManager();
+            String receiptContent = receiptManager.generateReceipt(currentOrder, total);
+            receiptManager.saveReceipt(receiptContent);
+
+            // Clear the current order and display a success message
+            currentOrder.clear();
+            System.out.println("╔══════════════════════════════════════════════════════╗");
+            System.out.println("║              Order Confirmed! Receipt Saved!         ║");
+            System.out.println("╚══════════════════════════════════════════════════════╝");
+        } else {
+            // Cancel the order
+            currentOrder.clear();
+            System.out.println("╔══════════════════════════════════════════════════════╗");
+            System.out.println("║               Order Canceled! Returning...           ║");
+            System.out.println("╚══════════════════════════════════════════════════════╝");
 
 
+        }
     }
 }
 

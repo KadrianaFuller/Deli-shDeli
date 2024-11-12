@@ -1,0 +1,6 @@
+DELI-sh Sandwich Shop Receipt
+=================================
+Drink: Lemonade                          $2.50  
+=================================
+Total Price: $2.50  
+Thank you for your order!

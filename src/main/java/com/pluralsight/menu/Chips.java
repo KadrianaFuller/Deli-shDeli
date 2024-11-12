@@ -2,19 +2,19 @@ package com.pluralsight.menu;
 
 public class Chips extends Order {
 
-    private String flavor; // Flavor of the chips
+    private String type;
 
     public Chips(String flavor) {
         super("One Size", 1.50, "Chips"); // Fixed size, price, and type
-        this.flavor = flavor;
+        this.type = flavor;
     }
 
     public String getFlavor() {
-        return flavor;
+        return type;
     }
 
     public void setFlavor(String flavor) {
-        this.flavor = flavor;
+        this.type = flavor;
     }
 
     @Override
@@ -24,6 +24,6 @@ public class Chips extends Order {
 
     @Override
     public String toString() {
-        return "Chips: " + flavor + ", Price: $" + price;
+        return "Chips: " + type ;
     }
 }

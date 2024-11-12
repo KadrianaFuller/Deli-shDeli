@@ -1,0 +1,6 @@
+DELI-sh Sandwich Shop Receipt
+=================================
+4-inch Italian Herb and Cheese Bread Sandwich [Meat: Roast Beef, Steak; Sauces: Mustard; Toasted: No] $6.50  
+=================================
+Total Price: $6.50  
+Thank you for your order!

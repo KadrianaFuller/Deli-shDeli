@@ -6,7 +6,7 @@ public class Main {
         ScreenManager screenManager = new ScreenManager();
 
 
-        screenManager.showSplashScreen();
+        screenManager.showLogoScreen();
     }
 
 

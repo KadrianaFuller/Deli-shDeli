@@ -103,16 +103,26 @@ public class Sandwich extends Order {
 
     @Override
     public String toString() {
-        return "Sandwich{" +
-                "size='" + size + '\'' +
-                ", breadType='" + breadType + '\'' +
-                ", meatToppings=" + meatToppings +
-                ", cheeseToppings=" + cheeseToppings +
-                ", regularToppings=" + regularToppings +
-                ", sauces=" + sauces +
-                ", isToasted=" + (isToasted ? "Yes" : "No") +
-                ", Total Price=$" + String.format("%.2f", getTotal()) +
-                '}';
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(size).append("-inch ").append(breadType).append(" Bread Sandwich [");
+
+        if (!meatToppings.isEmpty()) {
+            sb.append("Meat: ").append(String.join(", ", meatToppings)).append("; ");
+        }
+        if (!cheeseToppings.isEmpty()) {
+            sb.append("Cheese: ").append(String.join(", ", cheeseToppings)).append("; ");
+        }
+        if (!regularToppings.isEmpty()) {
+            sb.append("Toppings: ").append(String.join(", ", regularToppings)).append("; ");
+        }
+        if (!sauces.isEmpty()) {
+            sb.append("Sauces: ").append(String.join(", ", sauces)).append("; ");
+        }
+
+        sb.append("Toasted: ").append(isToasted ? "Yes" : "No").append("]");
+
+        return sb.toString();
     }
 }
 
