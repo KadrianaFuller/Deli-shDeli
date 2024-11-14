@@ -8,8 +8,8 @@ import java.util.Scanner;
 
 public class ScreenManager {
 
-    private List<Order> currentOrder = new ArrayList<>();
-    private final Scanner in = new Scanner(System.in);
+    private List<Order> currentOrder = new ArrayList<>(); // Used to keep track of the current order
+    private final Scanner in = new Scanner(System.in); // used for user input , made it final because it won't change
 
     public void showLogoScreen() {
         // Display the logo
@@ -57,10 +57,10 @@ public class ScreenManager {
 
             switch (choice) {
                 case "1":
-                    showOrderScreen(); // Standard order screen
+                    showOrderScreen();
                     break;
                 case "2":
-                    showCombosScreen(); // New method for combos
+                    showCombosScreen();
                     break;
                 case "0":
                     System.out.println("Thank you for visiting! Come again!");
@@ -98,7 +98,7 @@ public class ScreenManager {
                 System.out.println("Invalid choice! Returning to home screen.");
                 return;
         }
-
+        // Adds combo items to the current order
         System.out.println("You've selected: " + combo);
         currentOrder.add(combo.getSandwich());
         currentOrder.add(combo.getChips());
@@ -127,14 +127,14 @@ public class ScreenManager {
     }
 
     private void showOrderScreen() {
-        while (true) {
+        while (true) { // Will loop the order screen until user checks out or cancel
             System.out.println("╔═══════════════════════════════════════════╗");
             System.out.println("║                Order Screen               ║");
             System.out.println("╠═══════════════════════════════════════════╣");
             System.out.println("║  1) Add Sandwich                          ║");
             System.out.println("║  2) Add Drink                             ║");
             System.out.println("║  3) Add Chips                             ║");
-            System.out.println("║  4) Add Cookie                            ║"); // New Option
+            System.out.println("║  4) Add Cookie                            ║");
             System.out.println("║  5) Checkout                              ║");
             System.out.println("║  0) Cancel Order                          ║");
             System.out.println("╚═══════════════════════════════════════════╝");
@@ -158,7 +158,7 @@ public class ScreenManager {
                     checkout();
                     break;
                 case "0":
-                    currentOrder.clear();
+                    currentOrder.clear(); // clears the current order
                     System.out.println("Order canceled. Returning to Home Screen.");
                     return;
                 default:
@@ -571,7 +571,7 @@ public class ScreenManager {
         System.out.println("╔══════════════════════════════════════════════════════╗");
         System.out.println("║                    Select Chips:                     ║");
         System.out.println("╠══════════════════════════════════════════════════════╣");
-        System.out.println("║  (1) Kettle Jalapeno Lays                            ║");
+        System.out.println("║  (1) Kettle Jalapeño Lays                            ║");
         System.out.println("║  (2) Plain Lays                                      ║");
         System.out.println("║  (3) Cheddar Sun Chips                               ║");
         System.out.println("║  (4) Nacho Cheese Doritos                            ║");
@@ -670,13 +670,13 @@ public class ScreenManager {
         System.out.println("║                     Order Summary                    ║");
         double total = 0.0;
         for (Order order : currentOrder) {
-            System.out.printf("║  %-50s $%-6.2f %n ║", order.toString(), order.getTotal());
+            System.out.printf("║  %-50s $%-6.2f %n", order.toString(), order.getTotal());
             total += order.getTotal();
         }
 
         // Step 3: Display the total price
         System.out.println("╠══════════════════════════════════════════════════════╣");
-         System.out.printf("║  Total Price: $%-43.2f%n                             ║", total);
+        System.out.printf(" ║  Total Price: %-38s $%-6.2f %n", "", total);
         System.out.println("╚══════════════════════════════════════════════════════╝");
 
         // Step 4: Confirm or cancel the order

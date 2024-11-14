@@ -8,7 +8,6 @@ public abstract class Order {
 
 
     // Constructor
-
     public Order(String size, double price, String type) {
         this.size = size;
         this.price = price;
@@ -16,7 +15,6 @@ public abstract class Order {
     }
 
     // Getters and Setters
-
 
     public String getSize() {
         return size;

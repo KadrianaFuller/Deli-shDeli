@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Sandwich extends Order {
 
+    //Properties
     private String breadType;
     private List<String> meatToppings;
     private List<String> cheeseToppings;
@@ -11,7 +12,7 @@ public class Sandwich extends Order {
     private List<String> sauces;
     private boolean isToasted;
 
-
+    // Constructor
     public Sandwich(String size, double price, String type, String breadType, List<String> meatToppings, List<String> cheeseToppings, List<String> regularToppings, List<String> sauces, boolean isToasted) {
         super(size, price, "Sandwich");
         this.breadType = breadType;
@@ -21,6 +22,8 @@ public class Sandwich extends Order {
         this.sauces = sauces;
         this.isToasted = isToasted;
     }
+
+    //Getters and Setters
     public String getBreadType() {
         return breadType;
     }

@@ -2,16 +2,18 @@ package com.pluralsight.menu;
 
 import java.util.List;
 
-public class Combo {
+public class Combo extends Order {
 
+    // All properties that belong in my Combo.
     private String name;
     private Sandwich sandwich;
     private Chips chips;
     private Drinks drink;
-    private String cookie;
-    private double price;
+    private Cookies cookie;
 
-    public Combo(String name, Sandwich sandwich, Chips chips, Drinks drink, String cookie, double price) {
+ // Constructor
+    public Combo(String name, Sandwich sandwich, Chips chips, Drinks drink, Cookies cookie, double price) {
+        super("One Size", price, "combo");
         this.name = name;
         this.sandwich = sandwich;
         this.chips = chips;
@@ -19,7 +21,7 @@ public class Combo {
         this.cookie = cookie;
         this.price = price;
     }
-
+ // Getters and Setters
     public String getName() {
         return name;
     }
@@ -52,11 +54,11 @@ public class Combo {
         this.drink = drink;
     }
 
-    public String getCookie() {
+    public Cookies getCookie() {
         return cookie;
     }
 
-    public void setCookie(String cookie) {
+    public void setCookie(Cookies cookie) {
         this.cookie = cookie;
     }
 
@@ -66,6 +68,11 @@ public class Combo {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public double getTotal() {
+        return this.price;
     }
 
     public static Combo getCombo(String type) {
@@ -79,11 +86,10 @@ public class Combo {
                                 List.of("Spinach"),
                                 List.of("Mayo"),
                                 false),
-                        new Chips("Plain Lays"),
+                        new Chips("Kettle Jalapeno Lays"),
                         new Drinks("Medium", 2.50, "Lemonade"),
-                        "Chocolate Chip Cookie",
-                        12.50 // Total combo price
-                );
+                        new Cookies("Peanut Butter"),
+                        12.50);
             case "mack attack combo":
                 return new Combo(
                         "Mack Attack Combo",
@@ -92,22 +98,24 @@ public class Combo {
                                 List.of("Cheddar"),
                                 List.of("Lettuce", "Cucumbers", "Jalapenos"),
                                 List.of("Mustard", "Ranch"),
-                                false),
+                                true),
                         new Chips("Nacho Cheese Doritos"),
-                        new Drinks("Large", 3.00, "Coke"),
-                        "Oatmeal Raisin Cookie",
-                        13.00 // Total combo price
-                );
+                        new Drinks("Large", 3.00, "Fanta Strawberry"),
+                        new Cookies("Oatmeal Raisin"),
+                        24.00);
             default:
-                return null; // Invalid combo
+                System.out.println("Invalid combo type.");
+                return null;
         }
     }
+
     @Override
     public String toString() {
-        return name + ": " + sandwich + ", Chips: " + chips + ", Drink: " + drink + ", Cookie: " + cookie + " - $"
-                + String.format("%.2f", price);
+        return String.format("Combo Name: %s\nSandwich: %s\nChips: %s\nDrink: %s\nCookie: %s\nPrice: $%.2f",
+                name, sandwich, chips, drink, cookie, price);
     }
-}
+    }
+
 
 
 

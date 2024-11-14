@@ -1,0 +1,7 @@
+DELI-sh Sandwich Shop Receipt
+=================================
+Peanut Butter Cookie                     $1.50  
+Aunt Vickie's BBQ Chips                  $1.50  
+=================================
+Total Price: $3.00  
+Thank you for your order!

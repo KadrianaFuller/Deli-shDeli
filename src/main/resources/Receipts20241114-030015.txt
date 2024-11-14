@@ -1,0 +1,8 @@
+DELI-sh Sandwich Shop Receipt
+=================================
+8-inch Wrap Bread Sandwich [Meat: Turkey, Chicken; Cheese: Pepper Jack, American; Toppings: Spinach; Sauces: Mayo; Toasted: No] $11.20 
+One Size Plain Lays                      $1.50  
+Medium Lemonade                          $2.50  
+=================================
+Total Price: $15.20 
+Thank you for your order!
