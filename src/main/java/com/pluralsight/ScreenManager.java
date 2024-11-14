@@ -503,25 +503,25 @@ public class ScreenManager {
         System.out.print("Enter your drink choice (1-6): ");
 
         String drinkChoice = in.nextLine();
-        String flavor;
+        String type;
         switch (drinkChoice) {
             case "1":
-                flavor = "Water";
+                type = "Water";
                 break;
             case "2":
-                flavor = "Lemonade";
+                type = "Lemonade";
                 break;
             case "3":
-                flavor = "Fanta Strawberry";
+                type = "Fanta Strawberry";
                 break;
             case "4":
-                flavor = "Coke";
+                type = "Coke";
                 break;
             case "5":
-                flavor = "Sprite";
+                type = "Sprite";
                 break;
             case "6":
-                flavor = "Sweet Tea";
+                type = "Sweet Tea";
                 break;
             default:
                 System.out.println("Invalid choice. Returning to Order Screen.");
@@ -556,13 +556,13 @@ public class ScreenManager {
                 System.out.println("Invalid choice. Returning to Order Screen.");
                 return;
         }
-        Drinks drink = new Drinks(size, price, flavor);
+        Drinks drink = new Drinks(size, price, type);
         currentOrder.add(drink);
 
         // Confirmation message
         System.out.println("╔══════════════════════════════════════════════════════╗");
         System.out.println("║                Drink Added to Order!                 ║");
-        System.out.println("║                " + size + " " + flavor + "           ║");
+        System.out.println("║                " + size + " " + type + "           ║");
         System.out.println("╚══════════════════════════════════════════════════════╝");
 
     }
