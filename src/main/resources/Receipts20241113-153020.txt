@@ -1,0 +1,6 @@
+DELI-sh Sandwich Shop Receipt
+=================================
+8-inch White Bread Sandwich [Meat: Steak, Ham; Cheese: American; Toppings: Lettuce, Peppers, Onions; Sauces: Mayo, Mustard; Toasted: Yes] $9.60  
+=================================
+Total Price: $9.60  
+Thank you for your order!

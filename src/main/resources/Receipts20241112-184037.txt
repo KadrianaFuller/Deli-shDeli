@@ -1,0 +1,8 @@
+DELI-sh Sandwich Shop Receipt
+=================================
+8-inch Italian Herb and Cheese Bread Sandwich [Meat: Ham, Chicken; Cheese: Pepper Jack, American; Toppings: Lettuce, Peppers, Tomatoes, Jalapeños, Cucumbers, Pickles; Sauces: Mayo, Mustard; Toasted: Yes] $10.20
+Drink: Lemonade                          $2.50  
+Chips: Kettle Jalapeno Lays              $1.50  
+=================================
+Total Price: $14.20 
+Thank you for your order!

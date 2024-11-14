@@ -175,7 +175,6 @@ public class ScreenManager {
                 System.out.println("Invalid choice. Returning to Order Screen.");
                 return;
         }
-
         List<String> meatToppings = new ArrayList<>();
         double extraMeatCost = 0;
         while (true) {
@@ -188,9 +187,10 @@ public class ScreenManager {
             System.out.println("║  (4) Roast Beef                                      ║");
             System.out.println("║  (5) Chicken                                         ║");
             System.out.println("║  (6) Bacon                                           ║");
+            System.out.println("║  (7) Turkey                                          ║");
             System.out.println("║  (0) Done                                            ║");
             System.out.println("╚══════════════════════════════════════════════════════╝");
-            System.out.print("Enter your choice (1-6, 0 to finish): ");
+            System.out.print("Enter your choice (1-7, 0 to finish): ");
             String meatChoice = in.nextLine();
 
             if (meatChoice.equals("0")) break;
@@ -214,6 +214,9 @@ public class ScreenManager {
                     break;
                 case "6":
                     meat = "Bacon";
+                    break;
+                case "7":
+                    meat = "Turkey";
                     break;
                 default:
                     System.out.println("Invalid choice.");
@@ -240,6 +243,8 @@ public class ScreenManager {
                 }
             }
         }
+
+
         List<String> cheeseToppings = new ArrayList<>();
         double extraCheeseCost = 0;
         while (true) {

@@ -1,0 +1,8 @@
+DELI-sh Sandwich Shop Receipt
+=================================
+4-inch White Bread Sandwich [Meat: Steak; Cheese: American; Toppings: Lettuce, Peppers, Onions; Sauces: Mayo, Mustard; Toasted: No] $6.30  
+Drink: Lemonade                          $2.50  
+Chips: Aunt Vickie's BBQ Chips           $1.50  
+=================================
+Total Price: $10.30 
+Thank you for your order!
