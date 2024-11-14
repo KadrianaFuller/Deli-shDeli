@@ -1,16 +1,18 @@
 package com.pluralsight.menu;
 
-public class Chips extends Order {
+public class Cookies extends Order {
 
     private String flavor;
 
-    public Chips(String type) {
-        super("One Size", 1.50, "Chips"); // Fixed size, price, and type
+
+
+    public Cookies(String type) {
+        super("one size",1.50,"cookies");
         this.type = type;
     }
 
     public String getFlavor() {
-        return type;
+        return flavor;
     }
 
     public void setFlavor(String flavor) {
@@ -19,11 +21,11 @@ public class Chips extends Order {
 
     @Override
     public double getTotal() {
-        return this.price; // Fixed price for chips
+        return this.price;
     }
 
     @Override
     public String toString() {
-        return size + " " + type;
+        return type + " Cookie";
     }
 }

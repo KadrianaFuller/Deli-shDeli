@@ -2,17 +2,17 @@ package com.pluralsight.menu;
 
 public class Drinks extends Order{
 
-    private String type;
+    private String flavor;
 
     // Constructor
-    public Drinks(String size, double price, String flavor) {
+    public Drinks(String size, double price, String type) {
         super(size, price, "Drink");
-        this.type = flavor;
+        this.type = type;
     }
 
     // Getter and Setter
     public String getFlavor() {
-        return type;
+        return flavor;
     }
     public void setFlavor(String flavor) {
         this.type = flavor;
@@ -27,6 +27,6 @@ public class Drinks extends Order{
 
     @Override
     public String toString() {
-        return "Drink: " + type;
+        return size + " " + type; // Example: "Medium Lemonade"
     }
 }

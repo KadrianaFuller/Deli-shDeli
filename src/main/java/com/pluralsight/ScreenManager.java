@@ -1,9 +1,6 @@
 package com.pluralsight;
 
-import com.pluralsight.menu.Chips;
-import com.pluralsight.menu.Drinks;
-import com.pluralsight.menu.Order;
-import com.pluralsight.menu.Sandwich;
+import com.pluralsight.menu.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +49,7 @@ public class ScreenManager {
             System.out.println("║            Where Delicious Meets DELI-cious              ║");
             System.out.println("╠══════════════════════════════════════════════════════════╣");
             System.out.println("║  1) Place New Order                                      ║");
+            System.out.println("║  2) View Combos                                          ║");
             System.out.println("║  0) Exit                                                 ║");
             System.out.println("╚══════════════════════════════════════════════════════════╝");
             System.out.print("Enter your choice: ");
@@ -59,7 +57,10 @@ public class ScreenManager {
 
             switch (choice) {
                 case "1":
-                    showOrderScreen();
+                    showOrderScreen(); // Standard order screen
+                    break;
+                case "2":
+                    showCombosScreen(); // New method for combos
                     break;
                 case "0":
                     System.out.println("Thank you for visiting! Come again!");
@@ -72,6 +73,59 @@ public class ScreenManager {
         }
     }
 
+    private void showCombosScreen() {
+        System.out.println("╔══════════════════════════════════════════════════════════╗");
+        System.out.println("║                       Combos Menu                        ║");
+        System.out.println("╠══════════════════════════════════════════════════════════╣");
+        System.out.println("║  1) Watiee Wrap Combo                                    ║");
+        System.out.println("║  2) Mack Attack Combo                                    ║");
+        System.out.println("║  0) Return to Home Screen                                ║");
+        System.out.println("╚══════════════════════════════════════════════════════════╝");
+        System.out.print("Select a combo or return: ");
+        String choice = in.nextLine();
+
+        Combo combo;
+        switch (choice) {
+            case "1":
+                combo = Combo.getCombo("watiee wrap combo");
+                break;
+            case "2":
+                combo = Combo.getCombo("mack attack combo");
+                break;
+            case "0":
+                return;
+            default:
+                System.out.println("Invalid choice! Returning to home screen.");
+                return;
+        }
+
+        System.out.println("You've selected: " + combo);
+        currentOrder.add(combo.getSandwich());
+        currentOrder.add(combo.getChips());
+        currentOrder.add(combo.getDrink());
+        System.out.println("Combo added to your order!");
+
+        System.out.println("╔══════════════════════════════════════════════════════════╗");
+        System.out.println("║            What would you like to do next?               ║");
+        System.out.println("╠══════════════════════════════════════════════════════════╣");
+        System.out.println("║  1) Checkout                                             ║");
+        System.out.println("║  2) Continue Ordering                                    ║");
+        System.out.println("╚══════════════════════════════════════════════════════════╝");
+        System.out.print("Enter your choice: ");
+        String nextChoice = in.nextLine();
+
+        switch (nextChoice) {
+            case "1":
+                checkout();
+                break;
+            case "2":
+                return;
+            default:
+                System.out.println("Invalid choice! Returning to home screen.");
+        }
+
+    }
+
     private void showOrderScreen() {
         while (true) {
             System.out.println("╔═══════════════════════════════════════════╗");
@@ -80,7 +134,8 @@ public class ScreenManager {
             System.out.println("║  1) Add Sandwich                          ║");
             System.out.println("║  2) Add Drink                             ║");
             System.out.println("║  3) Add Chips                             ║");
-            System.out.println("║  4) Checkout                              ║");
+            System.out.println("║  4) Add Cookie                            ║"); // New Option
+            System.out.println("║  5) Checkout                              ║");
             System.out.println("║  0) Cancel Order                          ║");
             System.out.println("╚═══════════════════════════════════════════╝");
             System.out.print("Enter your choice: ");
@@ -97,6 +152,9 @@ public class ScreenManager {
                     addChips();
                     break;
                 case "4":
+                    addCookie();
+                    break;
+                case "5":
                     checkout();
                     break;
                 case "0":
@@ -108,9 +166,9 @@ public class ScreenManager {
                     break;
             }
         }
-
-
     }
+
+
 
     private void addSandwich() {
         System.out.println("╔══════════════════════════════════════════════════════╗");
@@ -305,6 +363,7 @@ public class ScreenManager {
                 }
             }
         }
+
         List<String> regularToppings = new ArrayList<>();
         while (true) {
             System.out.println("╔══════════════════════════════════════════════════════╗");
@@ -319,9 +378,10 @@ public class ScreenManager {
             System.out.println("║  (7) Pickles                                         ║");
             System.out.println("║  (8) Mushrooms                                       ║");
             System.out.println("║  (9) Black Olives                                    ║");
+            System.out.println("║  (10) Spinach                                        ║");
             System.out.println("║  (0) Done                                            ║");
             System.out.println("╚══════════════════════════════════════════════════════╝");
-            System.out.print("Enter your choice (1-9, 0 to finish): ");
+            System.out.print("Enter your choice (1-10, 0 to finish): ");
             String toppingChoice = in.nextLine();
 
             if (toppingChoice.equals("0")) break;
@@ -355,13 +415,18 @@ public class ScreenManager {
                 case "9":
                     topping = "Black Olives";
                     break;
+                case "10": // New case for Spinach
+                    topping = "Spinach";
+                    break;
                 default:
                     System.out.println("Invalid choice.");
                     continue;
             }
 
+
             regularToppings.add(topping);
         }
+
         List<String> sauces = new ArrayList<>();
         while (true) {
             System.out.println("╔══════════════════════════════════════════════════════╗");
@@ -373,14 +438,14 @@ public class ScreenManager {
             System.out.println("║  (4) Ketchup                                         ║");
             System.out.println("║  (5) Thousand Island                                 ║");
             System.out.println("║  (6) Vinaigrette                                     ║");
+            System.out.println("║  (7) Watie Sauce                                     ║");
             System.out.println("║  (0) Done                                            ║");
             System.out.println("╚══════════════════════════════════════════════════════╝");
-            System.out.print("Enter your choice (1-6, 0 to finish):");
+            System.out.print("Enter your choice (1-7, 0 to finish):");
 
             String sauceChoice = in.nextLine();
 
             if (sauceChoice.equals("0")) break;
-
 
             String sauce;
             switch (sauceChoice) {
@@ -402,12 +467,16 @@ public class ScreenManager {
                 case "6":
                     sauce = "Vinaigrette";
                     break;
+                case "7":
+                    sauce = "Watie Sauce";
+                    break;
                 default:
                     System.out.println("Invalid option. Please try again!");
                     continue;
             }
             sauces.add(sauce);
         }
+
         System.out.print("Would you like the sandwich toasted? (yes/no): ");
         boolean isToasted = in.nextLine().equalsIgnoreCase("yes");
 
@@ -537,10 +606,53 @@ public class ScreenManager {
 
         System.out.println("╔══════════════════════════════════════════════════════╗");
         System.out.println("║              Chips Added to Order!                   ║");
-        System.out.println("║                   " + type + "                            ║");
+        System.out.println("║              " + type + "                            ║");
         System.out.println("╚══════════════════════════════════════════════════════╝");
 
     }
+    private void addCookie() {
+        System.out.println("╔══════════════════════════════════════════════════════╗");
+        System.out.println("║                   Select Cookie:                     ║");
+        System.out.println("╠══════════════════════════════════════════════════════╣");
+        System.out.println("║  (1) Chocolate Chip                                  ║");
+        System.out.println("║  (2) Peanut Butter                                   ║");
+        System.out.println("║  (3) Oatmeal Raisin                                  ║");
+        System.out.println("║  (4) White Chocolate Macadamia                      ║");
+        System.out.println("╚══════════════════════════════════════════════════════╝");
+        System.out.print("Enter your cookie choice (1-4): ");
+
+        String cookieChoice = in.nextLine();
+        String type;
+
+        switch (cookieChoice) {
+            case "1":
+                type = "Chocolate Chip";
+                break;
+            case "2":
+                type = "Peanut Butter";
+                break;
+            case "3":
+                type = "Oatmeal Raisin";
+                break;
+            case "4":
+                type = "White Chocolate Macadamia";
+                break;
+            default:
+                System.out.println("Invalid choice. Returning to Order Screen.");
+                return;
+        }
+
+        // Create a new Cookie object
+        Cookies cookie = new Cookies(type);
+        currentOrder.add(cookie);
+
+        System.out.println("╔══════════════════════════════════════════════════════╗");
+        System.out.println("║              Cookie Added to Order!                  ║");
+        System.out.println("║                " + type + "                        ║");
+        System.out.println("╚══════════════════════════════════════════════════════╝");
+
+    }
+
 
     private void checkout() {
         System.out.println("╔══════════════════════════════════════════════════════╗");
