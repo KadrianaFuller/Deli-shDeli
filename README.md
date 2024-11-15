@@ -10,10 +10,13 @@ From custom sandwiches to irresistible combos, we’ve got everything you need t
 🎉 Features You’ll Love
 🛠️ Build Your Own Sandwich:
 Choose your bread, toppings, sauces, and whether you want it toasted! 🔥
+
 🍱 Predefined Combos:
 Too hungry to think? We’ve got you covered with Watiee Wrap Combo 🥙 and Mack Attack Combo 🐔.
+
 🧾 Checkout Like a Pro:
 Get a beautifully formatted order summary and a timestamped receipt.
+
 💾 Auto-Saving Receipts:
 Your orders are saved for posterity. (Or until you delete the files. 🗑️)
 
