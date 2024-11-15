@@ -46,6 +46,11 @@ Add more combos, toppings, or drinks to make it your own!
 🥳 Fun for Everyone:
 Because coding is always better with sandwiches. 😎
 
+📂 Project Structure
+UML Diagram
+Here's an overview of the application's structure:
+
+![Capture](https://github.com/user-attachments/assets/6a68fce4-c486-4bdb-84c2-2cadbbf7cd47)
 
 
 
