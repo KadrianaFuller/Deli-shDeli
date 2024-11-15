@@ -1,0 +1,9 @@
+DELI-sh Sandwich Shop Receipt
+=================================
+8-inch Wheat Bread Sandwich [Meat: Ham, Turkey; Cheese: American, Pepper Jack; Toppings: Spinach, Peppers, Jalapenos, Cucumbers; Sauces: Mayo, Mustard, Watiee Sauce; Toasted: No] $10.20 
+Medium Lemonade                          $2.50  
+Kettle Jalapeno Lays                     $1.50  
+Peanut Butter Cookie                     $1.50  
+=================================
+Total Price: $15.70 
+Thank you for your order!

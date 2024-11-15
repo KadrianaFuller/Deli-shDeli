@@ -1,0 +1,15 @@
+DELI-sh Sandwich Shop Receipt
+=================================
+Combo: Watiee Wrap Combo
+  Sandwich: 8-inch Wrap Bread Sandwich [Meat: Turkey, Chicken; Cheese: Pepper Jack, American; Toppings: Spinach; Sauces: Mayo; Toasted: No]
+  Chips: Kettle Jalapeno Lays
+  Drink: Medium Lemonade
+  Cookie: Peanut Butter Cookie $12.50 
+Combo: Mack Attack Combo
+  Sandwich: 8-inch Italian Herb and Cheese Bread Sandwich [Meat: Chicken, Turkey, Ham; Cheese: Cheddar; Toppings: Lettuce, Cucumbers, Jalapenos; Sauces: Mustard, Ranch; Toasted: Yes]
+  Chips: Nacho Cheese Doritos
+  Drink: Large Fanta Strawberry
+  Cookie: Oatmeal Raisin Cookie $24.00 
+=================================
+Total Price: $36.50 
+Thank you for your order!

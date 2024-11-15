@@ -98,12 +98,12 @@ public class ScreenManager {
                 System.out.println("Invalid choice! Returning to home screen.");
                 return;
         }
-        // Adds combo items to the current order
+        // Display confirmation message
         System.out.println("You've selected: " + combo);
-        currentOrder.add(combo.getSandwich());
-        currentOrder.add(combo.getChips());
-        currentOrder.add(combo.getDrink());
         System.out.println("Combo added to your order!");
+
+        // Add the combo as a single order
+        currentOrder.add(combo);
 
         System.out.println("╔══════════════════════════════════════════════════════════╗");
         System.out.println("║            What would you like to do next?               ║");
@@ -165,9 +165,24 @@ public class ScreenManager {
                     System.out.println("Invalid choice. Please try again.");
                     break;
             }
+            // After each item is added, ask if the user wants to keep shopping
+            System.out.println("╔═══════════════════════════════════════════╗");
+            System.out.println("║  What would you like to do next?          ║");
+            System.out.println("║  1) Continue Shopping                     ║");
+            System.out.println("║  2) Checkout                              ║");
+            System.out.println("╚═══════════════════════════════════════════╝");
+            System.out.print("Enter your choice: ");
+            String nextChoice = in.nextLine();
+
+            if (nextChoice.equals("1")){
+                return;
+            }else if (nextChoice.equals("2")){
+                checkout();
+                return;
+            }
+
         }
     }
-
 
 
     private void addSandwich() {
@@ -438,7 +453,7 @@ public class ScreenManager {
             System.out.println("║  (4) Ketchup                                         ║");
             System.out.println("║  (5) Thousand Island                                 ║");
             System.out.println("║  (6) Vinaigrette                                     ║");
-            System.out.println("║  (7) Watie Sauce                                     ║");
+            System.out.println("║  (7) Watiee Sauce                                     ║");
             System.out.println("║  (0) Done                                            ║");
             System.out.println("╚══════════════════════════════════════════════════════╝");
             System.out.print("Enter your choice (1-7, 0 to finish):");
@@ -468,7 +483,7 @@ public class ScreenManager {
                     sauce = "Vinaigrette";
                     break;
                 case "7":
-                    sauce = "Watie Sauce";
+                    sauce = "Watiee Sauce";
                     break;
                 default:
                     System.out.println("Invalid option. Please try again!");
@@ -656,27 +671,37 @@ public class ScreenManager {
 
     private void checkout() {
         System.out.println("╔══════════════════════════════════════════════════════╗");
-        System.out.println("║                      Checkout                        ║");
+        System.out.println("║                      Checkout:                       ║");
         System.out.println("╠══════════════════════════════════════════════════════╣");
 
         // Step 1: Check if the order is empty
         if (currentOrder.isEmpty()) {
-            System.out.println("║ No items in the order.                               ║");
+            System.out.println("║               No items in the order.                 ║");
             System.out.println("╚══════════════════════════════════════════════════════╝");
             return;
         }
 
-        // Step 2: Display the order summary
-        System.out.println("║                     Order Summary                    ║");
+        // Step 2: Display the order summary inside a box
+        System.out.println("╔══════════════════════════════════════════════════════╗");
+        System.out.println("║                     Order Summary:                   ║");
+        System.out.println("╠══════════════════════════════════════════════════════╣");
         double total = 0.0;
+
         for (Order order : currentOrder) {
-            System.out.printf("║  %-50s $%-6.2f %n", order.toString(), order.getTotal());
-            total += order.getTotal();
+            // Check if the order is a Combo
+            if (order instanceof Combo) {
+                Combo combo = (Combo) order;
+                System.out.printf("║  %-40s $%-6.2f %n", combo.getName(), combo.getTotal());
+            } else {
+                // Handle individual items
+                System.out.printf("║  %-40s $%-6.2f %n", order.toString(), order.getTotal());
+            }
+            total += order.getTotal(); // Add the item's total to the overall total
         }
 
         // Step 3: Display the total price
         System.out.println("╠══════════════════════════════════════════════════════╣");
-        System.out.printf(" ║  Total Price: %-38s $%-6.2f %n", "", total);
+        System.out.printf(" ║       %-40s $%-6.2f %n", "Total Price:", total);
         System.out.println("╚══════════════════════════════════════════════════════╝");
 
         // Step 4: Confirm or cancel the order
@@ -701,7 +726,7 @@ public class ScreenManager {
             System.out.println("║               Order Canceled! Returning...           ║");
             System.out.println("╚══════════════════════════════════════════════════════╝");
 
-
+            showHomeScreen();
         }
     }
 }

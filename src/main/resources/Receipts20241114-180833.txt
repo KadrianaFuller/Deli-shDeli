@@ -1,0 +1,11 @@
+DELI-sh Sandwich Shop Receipt
+=================================
+Combo: Mack Attack Combo
+  Sandwich: 8-inch Italian Herb and Cheese Bread Sandwich [Meat: Chicken, Turkey, Ham; Cheese: Cheddar; Toppings: Lettuce, Cucumbers, Jalapenos; Sauces: Mustard, Ranch; Toasted: Yes]
+  Chips: Nacho Cheese Doritos
+  Drink: Large Fanta Strawberry
+  Cookie: Oatmeal Raisin Cookie
+  Price: $24.00 $24.00 
+=================================
+Total Price: $24.00 
+Thank you for your order!

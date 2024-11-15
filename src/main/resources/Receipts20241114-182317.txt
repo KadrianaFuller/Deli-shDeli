@@ -1,0 +1,11 @@
+DELI-sh Sandwich Shop Receipt
+=================================
+Combo: Watiee Wrap Combo
+  Sandwich: 8-inch Wrap Bread Sandwich [Meat: Turkey, Chicken; Cheese: Pepper Jack, American; Toppings: Spinach; Sauces: Mayo, Watiee Sauce; Toasted: No]
+  Chips: Kettle Jalapeno Lays
+  Drink: Medium Lemonade
+  Cookie: Peanut Butter Cookie $12.50 
+Oatmeal Raisin Cookie                    $1.50  
+=================================
+Total Price: $14.00 
+Thank you for your order!

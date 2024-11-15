@@ -11,7 +11,7 @@ public class Combo extends Order {
     private Drinks drink;
     private Cookies cookie;
 
- // Constructor
+    // Constructor
     public Combo(String name, Sandwich sandwich, Chips chips, Drinks drink, Cookies cookie, double price) {
         super("One Size", price, "combo");
         this.name = name;
@@ -21,7 +21,8 @@ public class Combo extends Order {
         this.cookie = cookie;
         this.price = price;
     }
- // Getters and Setters
+
+    // Getters and Setters
     public String getName() {
         return name;
     }
@@ -84,7 +85,7 @@ public class Combo extends Order {
                                 List.of("Turkey", "Chicken"),
                                 List.of("Pepper Jack", "American"),
                                 List.of("Spinach"),
-                                List.of("Mayo"),
+                                List.of("Mayo", "Watiee Sauce"),
                                 false),
                         new Chips("Kettle Jalapeno Lays"),
                         new Drinks("Medium", 2.50, "Lemonade"),
@@ -111,10 +112,23 @@ public class Combo extends Order {
 
     @Override
     public String toString() {
-        return String.format("Combo Name: %s\nSandwich: %s\nChips: %s\nDrink: %s\nCookie: %s\nPrice: $%.2f",
-                name, sandwich, chips, drink, cookie, price);
+        StringBuilder sb = new StringBuilder();
+
+        // Combo Name
+        sb.append(String.format("Combo: %s\n", name));
+
+        // Sandwich Details
+        sb.append(String.format("  Sandwich: %s\n", sandwich.toString()));
+
+        // Chips, Drink, and Cookie
+        sb.append(String.format("  Chips: %s\n", chips.toString()));
+        sb.append(String.format("  Drink: %s\n", drink.toString()));
+        sb.append(String.format("  Cookie: %s", cookie.toString()));
+
+        return sb.toString();
     }
     }
+
 
 
 
