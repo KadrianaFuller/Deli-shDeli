@@ -1,0 +1,7 @@
+DELI-sh Sandwich Shop Receipt
+=================================
+12-inch Italian Herb and Cheese Bread Sandwich [Meat: Turkey; Cheese: Pepper Jack; Toppings: Spinach, Jalapenos; Sauces: Mayo, Watiee Sauce; Toasted: Yes] $10.90 
+Large Lemonade                           $3.00  
+=================================
+Total Price: $13.90 
+Thank you for your order!

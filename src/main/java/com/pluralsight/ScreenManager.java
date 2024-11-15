@@ -19,7 +19,7 @@ public class ScreenManager {
         try {
             Thread.sleep(5000); // 5000 milliseconds = 5 seconds
         } catch (InterruptedException e) {
-            System.out.println("An error occurred during the splash screen delay.");
+            System.out.println("Error"); // in case the thread is interrupted.
             Thread.currentThread().interrupt();
         }
 
