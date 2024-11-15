@@ -37,6 +37,7 @@ Your orders are saved for posterity. (Or until you delete the files. 🗑️)
 ![Receipt](https://github.com/user-attachments/assets/08f44dde-bd26-46e1-897e-8add02794849)
 
 Why I Love This Code
+
 I loved writing this method because it’s like building a sandwich—every detail gets layered on perfectly! 🥪
 
 Efficient & Clean: By using StringBuilder, the method is concise and avoids unnecessary overhead.
