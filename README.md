@@ -39,8 +39,10 @@ Your orders are saved for posterity. (Or until you delete the files. 🗑️)
 💡 Why You’ll Love It
 🧑‍💻 Perfect for Learning Java:
 Practice concepts like inheritance, abstraction, and polymorphism.
+
 🎨 Customizable:
 Add more combos, toppings, or drinks to make it your own!
+
 🥳 Fun for Everyone:
 Because coding is always better with sandwiches. 😎
 
